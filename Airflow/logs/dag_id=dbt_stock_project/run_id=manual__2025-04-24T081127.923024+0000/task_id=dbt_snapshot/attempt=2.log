@@ -1,0 +1,32 @@
+[2025-04-24T08:25:40.299+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-24T08:25:40.317+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_stock_project.dbt_snapshot manual__2025-04-24T08:11:27.923024+00:00 [queued]>
+[2025-04-24T08:25:40.326+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_stock_project.dbt_snapshot manual__2025-04-24T08:11:27.923024+00:00 [queued]>
+[2025-04-24T08:25:40.328+0000] {taskinstance.py:2865} INFO - Starting attempt 2 of 2
+[2025-04-24T08:25:40.342+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2025-04-24 08:11:27.923024+00:00
+[2025-04-24T08:25:40.349+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_stock_project', 'dbt_snapshot', 'manual__2025-04-24T08:11:27.923024+00:00', '--job-id', '383', '--raw', '--subdir', 'DAGS_FOLDER/226_lab2_elt.py', '--cfg-path', '/tmp/tmpw3gtxfx3']
+[2025-04-24T08:25:40.351+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=5295) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-04-24T08:25:40.353+0000] {standard_task_runner.py:105} INFO - Job 383: Subtask dbt_snapshot
+[2025-04-24T08:25:40.353+0000] {standard_task_runner.py:72} INFO - Started process 5296 to run task
+[2025-04-24T08:25:40.406+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_stock_project.dbt_snapshot manual__2025-04-24T08:11:27.923024+00:00 [running]> on host e8b5346887eb
+[2025-04-24T08:25:40.488+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_stock_project' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-04-24T08:11:27.923024+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-24T08:11:27.923024+00:00'
+[2025-04-24T08:25:40.490+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-24T08:25:40.517+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-04-24T08:25:40.519+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /home/***/.dbt --project-dir /opt/***/dbt']
+[2025-04-24T08:25:40.529+0000] {subprocess.py:86} INFO - Output:
+[2025-04-24T08:25:43.253+0000] {subprocess.py:93} INFO - [0m08:25:43  Running with dbt=1.8.7
+[2025-04-24T08:25:44.885+0000] {subprocess.py:93} INFO - [0m08:25:44  Registered adapter: snowflake=1.8.1
+[2025-04-24T08:25:45.941+0000] {subprocess.py:93} INFO - [0m08:25:45  Found 7 models, 10 data tests, 4 snapshots, 3 sources, 459 macros
+[2025-04-24T08:25:45.946+0000] {subprocess.py:93} INFO - [0m08:25:45
+[2025-04-24T08:25:48.152+0000] {subprocess.py:93} INFO - [0m08:25:48  Concurrency: 1 threads (target='dev')
+[2025-04-24T08:25:48.154+0000] {subprocess.py:93} INFO - [0m08:25:48
+[2025-04-24T08:25:48.172+0000] {subprocess.py:93} INFO - [0m08:25:48  1 of 4 START snapshot snapshots.snapshot_moving_averages ....................... [RUN]
+[2025-04-24T08:37:30.886+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-04-24T08:37:30.888+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-04-24T08:37:30.890+0000] {process_utils.py:132} INFO - Sending 15 to group 5296. PIDs of all processes in the group: [5298, 5316, 5296]
+[2025-04-24T08:37:30.891+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 5296
+[2025-04-24T08:37:30.893+0000] {taskinstance.py:3092} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-04-24T08:37:30.894+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2025-04-24T08:37:30.919+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-24T08:37:30.946+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=5296, status='terminated', exitcode=0, started='08:25:39') (5296) terminated with exit code 0
+[2025-04-24T08:37:30.948+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=5298, status='terminated', started='08:25:40') (5298) terminated with exit code None
+[2025-04-24T08:37:30.949+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=5316, status='terminated', started='08:25:44') (5316) terminated with exit code None

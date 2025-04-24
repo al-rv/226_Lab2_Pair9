@@ -1,0 +1,56 @@
+[2025-04-24T07:24:56.600+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-24T07:24:56.616+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_stock_project.dbt_run manual__2025-04-24T07:24:55.364920+00:00 [queued]>
+[2025-04-24T07:24:56.626+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_stock_project.dbt_run manual__2025-04-24T07:24:55.364920+00:00 [queued]>
+[2025-04-24T07:24:56.627+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-04-24T07:24:56.643+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_run> on 2025-04-24 07:24:55.364920+00:00
+[2025-04-24T07:24:56.651+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_stock_project', 'dbt_run', 'manual__2025-04-24T07:24:55.364920+00:00', '--job-id', '355', '--raw', '--subdir', 'DAGS_FOLDER/226_lab2_elt.py', '--cfg-path', '/tmp/tmp7au8fbz_']
+[2025-04-24T07:24:56.654+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1954) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-04-24T07:24:56.654+0000] {standard_task_runner.py:105} INFO - Job 355: Subtask dbt_run
+[2025-04-24T07:24:56.655+0000] {standard_task_runner.py:72} INFO - Started process 1955 to run task
+[2025-04-24T07:24:56.706+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_stock_project.dbt_run manual__2025-04-24T07:24:55.364920+00:00 [running]> on host e8b5346887eb
+[2025-04-24T07:24:56.784+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_stock_project' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2025-04-24T07:24:55.364920+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-24T07:24:55.364920+00:00'
+[2025-04-24T07:24:56.786+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-24T07:24:56.817+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-04-24T07:24:56.819+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt run --profiles-dir /home/***/.dbt --project-dir /opt/***/dbt']
+[2025-04-24T07:24:56.829+0000] {subprocess.py:86} INFO - Output:
+[2025-04-24T07:24:59.697+0000] {subprocess.py:93} INFO - [0m07:24:59  Running with dbt=1.8.7
+[2025-04-24T07:25:01.510+0000] {subprocess.py:93} INFO - [0m07:25:01  Registered adapter: snowflake=1.8.1
+[2025-04-24T07:25:02.376+0000] {subprocess.py:93} INFO - [0m07:25:02  [[33mWARNING[0m]: Deprecated functionality
+[2025-04-24T07:25:02.377+0000] {subprocess.py:93} INFO - The `tests` config has been renamed to `data_tests`. Please see
+[2025-04-24T07:25:02.378+0000] {subprocess.py:93} INFO - https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+[2025-04-24T07:25:02.379+0000] {subprocess.py:93} INFO - information.
+[2025-04-24T07:25:02.391+0000] {subprocess.py:93} INFO - [0m07:25:02  [[33mWARNING[0m]: Did not find matching node for patch with name 'forecast_vs_actual' in the 'models' section of file 'models/output/schema.yml'
+[2025-04-24T07:25:02.394+0000] {subprocess.py:93} INFO - [0m07:25:02  [[33mWARNING[0m]: Did not find matching node for patch with name 'weekly_volume' in the 'models' section of file 'models/output/schema.yml'
+[2025-04-24T07:25:02.540+0000] {subprocess.py:93} INFO - [0m07:25:02  [[33mWARNING[0m]: Test 'test.dbt_stock_project.unique_forecast_vs_actual_forecast_id.3feac0ae65' (models/output/schema.yml) depends on a node named 'forecast_vs_actual' in package '' which was not found
+[2025-04-24T07:25:02.541+0000] {subprocess.py:93} INFO - [0m07:25:02  [[33mWARNING[0m]: Test 'test.dbt_stock_project.not_null_forecast_vs_actual_forecast_id.482cee41d9' (models/output/schema.yml) depends on a node named 'forecast_vs_actual' in package '' which was not found
+[2025-04-24T07:25:02.542+0000] {subprocess.py:93} INFO - [0m07:25:02  [[33mWARNING[0m]: Test 'test.dbt_stock_project.not_null_forecast_vs_actual_symbol.0da54eead5' (models/output/schema.yml) depends on a node named 'forecast_vs_actual' in package '' which was not found
+[2025-04-24T07:25:02.544+0000] {subprocess.py:93} INFO - [0m07:25:02  [[33mWARNING[0m]: Test 'test.dbt_stock_project.relationships_forecast_vs_actual_symbol__symbol__ref_stock_.a394b48f36' (models/output/schema.yml) depends on a node named 'forecast_vs_actual' in package '' which was not found
+[2025-04-24T07:25:02.545+0000] {subprocess.py:93} INFO - [0m07:25:02  [[33mWARNING[0m]: Test 'test.dbt_stock_project.unique_weekly_volume_stock_id.899aa2a832' (models/output/schema.yml) depends on a node named 'weekly_volume' in package '' which was not found
+[2025-04-24T07:25:02.546+0000] {subprocess.py:93} INFO - [0m07:25:02  [[33mWARNING[0m]: Test 'test.dbt_stock_project.not_null_weekly_volume_stock_id.888679227a' (models/output/schema.yml) depends on a node named 'weekly_volume' in package '' which was not found
+[2025-04-24T07:25:02.547+0000] {subprocess.py:93} INFO - [0m07:25:02  [[33mWARNING[0m]: Test 'test.dbt_stock_project.relationships_weekly_volume_stock_id__stock_id__ref_stock_.205aaad332' (models/output/schema.yml) depends on a node named 'weekly_volume' in package '' which was not found
+[2025-04-24T07:25:02.824+0000] {subprocess.py:93} INFO - [0m07:25:02  Found 7 models, 11 data tests, 3 sources, 459 macros
+[2025-04-24T07:25:02.828+0000] {subprocess.py:93} INFO - [0m07:25:02
+[2025-04-24T07:25:04.979+0000] {subprocess.py:93} INFO - [0m07:25:04  Concurrency: 1 threads (target='dev')
+[2025-04-24T07:25:04.980+0000] {subprocess.py:93} INFO - [0m07:25:04
+[2025-04-24T07:25:04.993+0000] {subprocess.py:93} INFO - [0m07:25:04  1 of 5 START sql table model analytics.actual_vs_forecast ...................... [RUN]
+[2025-04-24T07:25:06.890+0000] {subprocess.py:93} INFO - [0m07:25:06  1 of 5 OK created sql table model analytics.actual_vs_forecast ................. [[32mSUCCESS 1[0m in 1.89s]
+[2025-04-24T07:25:06.955+0000] {subprocess.py:93} INFO - [0m07:25:06  2 of 5 START sql table model analytics.stock_indicators ........................ [RUN]
+[2025-04-24T07:25:08.396+0000] {subprocess.py:93} INFO - [0m07:25:08  2 of 5 OK created sql table model analytics.stock_indicators ................... [[32mSUCCESS 1[0m in 1.44s]
+[2025-04-24T07:25:08.399+0000] {subprocess.py:93} INFO - [0m07:25:08  3 of 5 START sql table model analytics.volume_summary .......................... [RUN]
+[2025-04-24T07:25:10.383+0000] {subprocess.py:93} INFO - [0m07:25:10  3 of 5 OK created sql table model analytics.volume_summary ..................... [[32mSUCCESS 1[0m in 1.98s]
+[2025-04-24T07:25:10.388+0000] {subprocess.py:93} INFO - [0m07:25:10  4 of 5 START sql table model analytics.moving_averages ......................... [RUN]
+[2025-04-24T07:25:11.675+0000] {subprocess.py:93} INFO - [0m07:25:11  4 of 5 OK created sql table model analytics.moving_averages .................... [[32mSUCCESS 1[0m in 1.28s]
+[2025-04-24T07:25:11.678+0000] {subprocess.py:93} INFO - [0m07:25:11  5 of 5 START sql table model analytics.rsi ..................................... [RUN]
+[2025-04-24T07:25:13.330+0000] {subprocess.py:93} INFO - [0m07:25:13  5 of 5 OK created sql table model analytics.rsi ................................ [[32mSUCCESS 1[0m in 1.65s]
+[2025-04-24T07:25:13.336+0000] {subprocess.py:93} INFO - [0m07:25:13
+[2025-04-24T07:25:13.337+0000] {subprocess.py:93} INFO - [0m07:25:13  Finished running 5 table models in 0 hours 0 minutes and 10.51 seconds (10.51s).
+[2025-04-24T07:25:13.445+0000] {subprocess.py:93} INFO - [0m07:25:13
+[2025-04-24T07:25:13.446+0000] {subprocess.py:93} INFO - [0m07:25:13  [32mCompleted successfully[0m
+[2025-04-24T07:25:13.447+0000] {subprocess.py:93} INFO - [0m07:25:13
+[2025-04-24T07:25:13.448+0000] {subprocess.py:93} INFO - [0m07:25:13  Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
+[2025-04-24T07:25:14.461+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-04-24T07:25:14.482+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-24T07:25:14.483+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dbt_stock_project, task_id=dbt_run, run_id=manual__2025-04-24T07:24:55.364920+00:00, execution_date=20250424T072455, start_date=20250424T072456, end_date=20250424T072514
+[2025-04-24T07:25:14.516+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-24T07:25:14.543+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-24T07:25:14.547+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

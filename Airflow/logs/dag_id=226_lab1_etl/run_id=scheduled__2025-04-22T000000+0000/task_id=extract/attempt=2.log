@@ -1,0 +1,60 @@
+[2025-04-23T00:04:31.686+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-23T00:04:31.733+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 226_lab1_etl.extract scheduled__2025-04-22T00:00:00+00:00 [queued]>
+[2025-04-23T00:04:31.766+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 226_lab1_etl.extract scheduled__2025-04-22T00:00:00+00:00 [queued]>
+[2025-04-23T00:04:31.768+0000] {taskinstance.py:2865} INFO - Starting attempt 2 of 2
+[2025-04-23T00:04:31.803+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonDecoratedOperator): extract> on 2025-04-22 00:00:00+00:00
+[2025-04-23T00:04:31.827+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=18338) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-04-23T00:04:31.829+0000] {standard_task_runner.py:72} INFO - Started process 18351 to run task
+[2025-04-23T00:04:31.828+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', '226_lab1_etl', 'extract', 'scheduled__2025-04-22T00:00:00+00:00', '--job-id', '289', '--raw', '--subdir', 'DAGS_FOLDER/226_lab1_etl.py', '--cfg-path', '/tmp/tmpffbzkfzc']
+[2025-04-23T00:04:31.834+0000] {standard_task_runner.py:105} INFO - Job 289: Subtask extract
+[2025-04-23T00:04:31.948+0000] {task_command.py:467} INFO - Running <TaskInstance: 226_lab1_etl.extract scheduled__2025-04-22T00:00:00+00:00 [running]> on host 9d71c5fa265e
+[2025-04-23T00:04:32.223+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='226_lab1_etl' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-04-22T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-22T00:00:00+00:00'
+[2025-04-23T00:04:32.227+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-23T00:04:34.584+0000] {python.py:240} INFO - Done. Returned value was: {'JPM':                                  Open        High  ...  Dividends  Stock Splits
+Date                                               ...                         
+2024-08-02 00:00:00-04:00  200.362918  201.139283  ...        0.0           0.0
+2024-08-05 00:00:00-04:00  190.702499  192.785922  ...        0.0           0.0
+2024-08-06 00:00:00-04:00  192.029189  199.104995  ...        0.0           0.0
+2024-08-07 00:00:00-04:00  199.999283  202.200646  ...        0.0           0.0
+2024-08-08 00:00:00-04:00  198.977227  201.375138  ...        0.0           0.0
+...                               ...         ...  ...        ...           ...
+2025-04-15 00:00:00-04:00  236.100006  238.649994  ...        0.0           0.0
+2025-04-16 00:00:00-04:00  232.000000  233.580002  ...        0.0           0.0
+2025-04-17 00:00:00-04:00  230.800003  234.339996  ...        0.0           0.0
+2025-04-21 00:00:00-04:00  230.630005  231.809998  ...        0.0           0.0
+2025-04-22 00:00:00-04:00  231.979996  235.990005  ...        0.0           0.0
+
+[180 rows x 7 columns], 'BAC':                                 Open       High  ...  Dividends  Stock Splits
+Date                                             ...                         
+2024-08-02 00:00:00-04:00  37.309561  37.829930  ...        0.0           0.0
+2024-08-05 00:00:00-04:00  35.002262  36.288458  ...        0.0           0.0
+2024-08-06 00:00:00-04:00  35.984093  36.632101  ...        0.0           0.0
+2024-08-07 00:00:00-04:00  37.407740  37.888839  ...        0.0           0.0
+2024-08-08 00:00:00-04:00  37.132834  37.721931  ...        0.0           0.0
+...                              ...        ...  ...        ...           ...
+2025-04-15 00:00:00-04:00  37.799999  38.750000  ...        0.0           0.0
+2025-04-16 00:00:00-04:00  37.860001  38.160000  ...        0.0           0.0
+2025-04-17 00:00:00-04:00  37.509998  37.869999  ...        0.0           0.0
+2025-04-21 00:00:00-04:00  37.070000  37.279999  ...        0.0           0.0
+2025-04-22 00:00:00-04:00  37.570000  38.490002  ...        0.0           0.0
+
+[180 rows x 7 columns], 'WFC':                                 Open       High  ...  Dividends  Stock Splits
+Date                                             ...                         
+2024-08-02 00:00:00-04:00  54.180434  54.563368  ...        0.0           0.0
+2024-08-05 00:00:00-04:00  50.370719  51.450796  ...        0.0           0.0
+2024-08-06 00:00:00-04:00  51.332965  52.000648  ...        0.0           0.0
+2024-08-07 00:00:00-04:00  52.187207  52.521048  ...        0.0           0.0
+2024-08-08 00:00:00-04:00  52.010470  52.354129  ...        0.0           0.0
+...                              ...        ...  ...        ...           ...
+2025-04-15 00:00:00-04:00  63.439999  65.419998  ...        0.0           0.0
+2025-04-16 00:00:00-04:00  63.889999  64.980003  ...        0.0           0.0
+2025-04-17 00:00:00-04:00  64.379997  65.709999  ...        0.0           0.0
+2025-04-21 00:00:00-04:00  64.199997  65.160004  ...        0.0           0.0
+2025-04-22 00:00:00-04:00  64.709999  66.410004  ...        0.0           0.0
+
+[180 rows x 7 columns]}
+[2025-04-23T00:04:34.986+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-23T00:04:34.988+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=226_lab1_etl, task_id=extract, run_id=scheduled__2025-04-22T00:00:00+00:00, execution_date=20250422T000000, start_date=20250423T000431, end_date=20250423T000434
+[2025-04-23T00:04:35.071+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-23T00:04:35.126+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-23T00:04:35.130+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

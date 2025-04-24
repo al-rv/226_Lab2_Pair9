@@ -1,0 +1,211 @@
+[2025-04-24T06:54:03.958+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-24T06:54:03.977+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_stock_project.dbt_test manual__2025-04-24T06:53:47.151368+00:00 [queued]>
+[2025-04-24T06:54:03.988+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_stock_project.dbt_test manual__2025-04-24T06:53:47.151368+00:00 [queued]>
+[2025-04-24T06:54:03.990+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-04-24T06:54:04.005+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_test> on 2025-04-24 06:53:47.151368+00:00
+[2025-04-24T06:54:04.013+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_stock_project', 'dbt_test', 'manual__2025-04-24T06:53:47.151368+00:00', '--job-id', '354', '--raw', '--subdir', 'DAGS_FOLDER/226_lab2_elt.py', '--cfg-path', '/tmp/tmpdv3yksc0']
+[2025-04-24T06:54:04.016+0000] {standard_task_runner.py:105} INFO - Job 354: Subtask dbt_test
+[2025-04-24T06:54:04.015+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=661) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-04-24T06:54:04.018+0000] {standard_task_runner.py:72} INFO - Started process 662 to run task
+[2025-04-24T06:54:04.067+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_stock_project.dbt_test manual__2025-04-24T06:53:47.151368+00:00 [running]> on host e8b5346887eb
+[2025-04-24T06:54:04.172+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_stock_project' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2025-04-24T06:53:47.151368+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-24T06:53:47.151368+00:00'
+[2025-04-24T06:54:04.173+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-24T06:54:04.193+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-04-24T06:54:04.194+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt test --profiles-dir /home/***/.dbt --project-dir /opt/***/dbt']
+[2025-04-24T06:54:04.205+0000] {subprocess.py:86} INFO - Output:
+[2025-04-24T06:54:06.069+0000] {subprocess.py:93} INFO - [0m06:54:06  Running with dbt=1.8.7
+[2025-04-24T06:54:07.172+0000] {subprocess.py:93} INFO - [0m06:54:07  Registered adapter: snowflake=1.8.1
+[2025-04-24T06:54:07.839+0000] {subprocess.py:93} INFO - [0m06:54:07  Found 7 models, 32 data tests, 3 sources, 459 macros
+[2025-04-24T06:54:07.843+0000] {subprocess.py:93} INFO - [0m06:54:07
+[2025-04-24T06:54:08.709+0000] {subprocess.py:93} INFO - [0m06:54:08  Concurrency: 1 threads (target='dev')
+[2025-04-24T06:54:08.709+0000] {subprocess.py:93} INFO - [0m06:54:08
+[2025-04-24T06:54:08.721+0000] {subprocess.py:93} INFO - [0m06:54:08  1 of 32 START test not_null_actual_vs_forecast_forecast_date ................... [RUN]
+[2025-04-24T06:54:09.702+0000] {subprocess.py:93} INFO - [0m06:54:09  1 of 32 PASS not_null_actual_vs_forecast_forecast_date ......................... [[32mPASS[0m in 0.98s]
+[2025-04-24T06:54:09.707+0000] {subprocess.py:93} INFO - [0m06:54:09  2 of 32 START test not_null_actual_vs_forecast_lower_bound ..................... [RUN]
+[2025-04-24T06:54:10.694+0000] {subprocess.py:93} INFO - [0m06:54:10  2 of 32 PASS not_null_actual_vs_forecast_lower_bound ........................... [[32mPASS[0m in 0.99s]
+[2025-04-24T06:54:10.698+0000] {subprocess.py:93} INFO - [0m06:54:10  3 of 32 START test not_null_actual_vs_forecast_predicted_close ................. [RUN]
+[2025-04-24T06:54:11.417+0000] {subprocess.py:93} INFO - [0m06:54:11  3 of 32 PASS not_null_actual_vs_forecast_predicted_close ....................... [[32mPASS[0m in 0.72s]
+[2025-04-24T06:54:11.422+0000] {subprocess.py:93} INFO - [0m06:54:11  4 of 32 START test not_null_actual_vs_forecast_symbol .......................... [RUN]
+[2025-04-24T06:54:12.168+0000] {subprocess.py:93} INFO - [0m06:54:12  4 of 32 PASS not_null_actual_vs_forecast_symbol ................................ [[32mPASS[0m in 0.74s]
+[2025-04-24T06:54:12.171+0000] {subprocess.py:93} INFO - [0m06:54:12  5 of 32 START test not_null_actual_vs_forecast_upper_bound ..................... [RUN]
+[2025-04-24T06:54:12.939+0000] {subprocess.py:93} INFO - [0m06:54:12  5 of 32 PASS not_null_actual_vs_forecast_upper_bound ........................... [[32mPASS[0m in 0.77s]
+[2025-04-24T06:54:12.942+0000] {subprocess.py:93} INFO - [0m06:54:12  6 of 32 START test not_null_moving_averages_close_price_14d_ma ................. [RUN]
+[2025-04-24T06:54:13.750+0000] {subprocess.py:93} INFO - [0m06:54:13  6 of 32 PASS not_null_moving_averages_close_price_14d_ma ....................... [[32mPASS[0m in 0.81s]
+[2025-04-24T06:54:13.753+0000] {subprocess.py:93} INFO - [0m06:54:13  7 of 32 START test not_null_moving_averages_close_price_30d_ma ................. [RUN]
+[2025-04-24T06:54:14.428+0000] {subprocess.py:93} INFO - [0m06:54:14  7 of 32 PASS not_null_moving_averages_close_price_30d_ma ....................... [[32mPASS[0m in 0.67s]
+[2025-04-24T06:54:14.432+0000] {subprocess.py:93} INFO - [0m06:54:14  8 of 32 START test not_null_moving_averages_close_price_7d_ma .................. [RUN]
+[2025-04-24T06:54:15.108+0000] {subprocess.py:93} INFO - [0m06:54:15  8 of 32 PASS not_null_moving_averages_close_price_7d_ma ........................ [[32mPASS[0m in 0.67s]
+[2025-04-24T06:54:15.112+0000] {subprocess.py:93} INFO - [0m06:54:15  9 of 32 START test not_null_moving_averages_symbol ............................. [RUN]
+[2025-04-24T06:54:15.996+0000] {subprocess.py:93} INFO - [0m06:54:15  9 of 32 PASS not_null_moving_averages_symbol ................................... [[32mPASS[0m in 0.88s]
+[2025-04-24T06:54:15.999+0000] {subprocess.py:93} INFO - [0m06:54:15  10 of 32 START test not_null_moving_averages_trade_date ........................ [RUN]
+[2025-04-24T06:54:16.706+0000] {subprocess.py:93} INFO - [0m06:54:16  10 of 32 PASS not_null_moving_averages_trade_date .............................. [[32mPASS[0m in 0.71s]
+[2025-04-24T06:54:16.710+0000] {subprocess.py:93} INFO - [0m06:54:16  11 of 32 START test not_null_rsi_rsi_14d ....................................... [RUN]
+[2025-04-24T06:54:17.399+0000] {subprocess.py:93} INFO - [0m06:54:17  11 of 32 PASS not_null_rsi_rsi_14d ............................................. [[32mPASS[0m in 0.69s]
+[2025-04-24T06:54:17.404+0000] {subprocess.py:93} INFO - [0m06:54:17  12 of 32 START test not_null_rsi_symbol ........................................ [RUN]
+[2025-04-24T06:54:18.223+0000] {subprocess.py:93} INFO - [0m06:54:18  12 of 32 PASS not_null_rsi_symbol .............................................. [[32mPASS[0m in 0.82s]
+[2025-04-24T06:54:18.226+0000] {subprocess.py:93} INFO - [0m06:54:18  13 of 32 START test not_null_rsi_trade_date .................................... [RUN]
+[2025-04-24T06:54:18.957+0000] {subprocess.py:93} INFO - [0m06:54:18  13 of 32 PASS not_null_rsi_trade_date .......................................... [[32mPASS[0m in 0.73s]
+[2025-04-24T06:54:18.960+0000] {subprocess.py:93} INFO - [0m06:54:18  14 of 32 START test not_null_stock_indicators_rsi_14d .......................... [RUN]
+[2025-04-24T06:54:19.684+0000] {subprocess.py:93} INFO - [0m06:54:19  14 of 32 ERROR not_null_stock_indicators_rsi_14d ............................... [[31mERROR[0m in 0.72s]
+[2025-04-24T06:54:19.688+0000] {subprocess.py:93} INFO - [0m06:54:19  15 of 32 START test not_null_stock_indicators_symbol ........................... [RUN]
+[2025-04-24T06:54:20.491+0000] {subprocess.py:93} INFO - [0m06:54:20  15 of 32 PASS not_null_stock_indicators_symbol ................................. [[32mPASS[0m in 0.80s]
+[2025-04-24T06:54:20.494+0000] {subprocess.py:93} INFO - [0m06:54:20  16 of 32 START test not_null_stock_indicators_trade_date ....................... [RUN]
+[2025-04-24T06:54:21.162+0000] {subprocess.py:93} INFO - [0m06:54:21  16 of 32 PASS not_null_stock_indicators_trade_date ............................. [[32mPASS[0m in 0.67s]
+[2025-04-24T06:54:21.166+0000] {subprocess.py:93} INFO - [0m06:54:21  17 of 32 START test not_null_volume_summary_symbol ............................. [RUN]
+[2025-04-24T06:54:21.885+0000] {subprocess.py:93} INFO - [0m06:54:21  17 of 32 PASS not_null_volume_summary_symbol ................................... [[32mPASS[0m in 0.72s]
+[2025-04-24T06:54:21.888+0000] {subprocess.py:93} INFO - [0m06:54:21  18 of 32 START test not_null_volume_summary_total_volume ....................... [RUN]
+[2025-04-24T06:54:22.545+0000] {subprocess.py:93} INFO - [0m06:54:22  18 of 32 ERROR not_null_volume_summary_total_volume ............................ [[31mERROR[0m in 0.66s]
+[2025-04-24T06:54:22.548+0000] {subprocess.py:93} INFO - [0m06:54:22  19 of 32 START test not_null_volume_summary_trade_date ......................... [RUN]
+[2025-04-24T06:54:23.478+0000] {subprocess.py:93} INFO - [0m06:54:23  19 of 32 PASS not_null_volume_summary_trade_date ............................... [[32mPASS[0m in 0.93s]
+[2025-04-24T06:54:23.481+0000] {subprocess.py:93} INFO - [0m06:54:23  20 of 32 START test positive_values_moving_averages_close_price_14d_ma ......... [RUN]
+[2025-04-24T06:54:23.495+0000] {subprocess.py:93} INFO - [0m06:54:23  20 of 32 ERROR positive_values_moving_averages_close_price_14d_ma .............. [[31mERROR[0m in 0.01s]
+[2025-04-24T06:54:23.498+0000] {subprocess.py:93} INFO - [0m06:54:23  21 of 32 START test positive_values_moving_averages_close_price_30d_ma ......... [RUN]
+[2025-04-24T06:54:23.507+0000] {subprocess.py:93} INFO - [0m06:54:23  21 of 32 ERROR positive_values_moving_averages_close_price_30d_ma .............. [[31mERROR[0m in 0.01s]
+[2025-04-24T06:54:23.509+0000] {subprocess.py:93} INFO - [0m06:54:23  22 of 32 START test positive_values_moving_averages_close_price_7d_ma .......... [RUN]
+[2025-04-24T06:54:23.518+0000] {subprocess.py:93} INFO - [0m06:54:23  22 of 32 ERROR positive_values_moving_averages_close_price_7d_ma ............... [[31mERROR[0m in 0.01s]
+[2025-04-24T06:54:23.522+0000] {subprocess.py:93} INFO - [0m06:54:23  23 of 32 START test positive_values_volume_summary_total_volume ................ [RUN]
+[2025-04-24T06:54:23.533+0000] {subprocess.py:93} INFO - [0m06:54:23  23 of 32 ERROR positive_values_volume_summary_total_volume ..................... [[31mERROR[0m in 0.01s]
+[2025-04-24T06:54:23.536+0000] {subprocess.py:93} INFO - [0m06:54:23  24 of 32 START test range_rsi_rsi_14d__100__0 .................................. [RUN]
+[2025-04-24T06:54:23.547+0000] {subprocess.py:93} INFO - [0m06:54:23  24 of 32 ERROR range_rsi_rsi_14d__100__0 ....................................... [[31mERROR[0m in 0.01s]
+[2025-04-24T06:54:23.552+0000] {subprocess.py:93} INFO - [0m06:54:23  25 of 32 START test range_stock_indicators_rsi_14d__100__0 ..................... [RUN]
+[2025-04-24T06:54:23.563+0000] {subprocess.py:93} INFO - [0m06:54:23  25 of 32 ERROR range_stock_indicators_rsi_14d__100__0 .......................... [[31mERROR[0m in 0.01s]
+[2025-04-24T06:54:23.566+0000] {subprocess.py:93} INFO - [0m06:54:23  26 of 32 START test relationships_moving_averages_symbol__symbol__source_raw_stock_  [RUN]
+[2025-04-24T06:54:24.433+0000] {subprocess.py:93} INFO - [0m06:54:24  26 of 32 PASS relationships_moving_averages_symbol__symbol__source_raw_stock_ .. [[32mPASS[0m in 0.87s]
+[2025-04-24T06:54:24.437+0000] {subprocess.py:93} INFO - [0m06:54:24  27 of 32 START test relationships_rsi_symbol__symbol__source_raw_stock_ ........ [RUN]
+[2025-04-24T06:54:25.348+0000] {subprocess.py:93} INFO - [0m06:54:25  27 of 32 PASS relationships_rsi_symbol__symbol__source_raw_stock_ .............. [[32mPASS[0m in 0.91s]
+[2025-04-24T06:54:25.352+0000] {subprocess.py:93} INFO - [0m06:54:25  28 of 32 START test relationships_stock_indicators_symbol__symbol__source_raw_stock_  [RUN]
+[2025-04-24T06:54:26.141+0000] {subprocess.py:93} INFO - [0m06:54:26  28 of 32 PASS relationships_stock_indicators_symbol__symbol__source_raw_stock_ . [[32mPASS[0m in 0.79s]
+[2025-04-24T06:54:26.144+0000] {subprocess.py:93} INFO - [0m06:54:26  29 of 32 START test unique_moving_averages_trade_date .......................... [RUN]
+[2025-04-24T06:54:26.974+0000] {subprocess.py:93} INFO - [0m06:54:26  29 of 32 FAIL 180 unique_moving_averages_trade_date ............................ [[31mFAIL 180[0m in 0.83s]
+[2025-04-24T06:54:26.976+0000] {subprocess.py:93} INFO - [0m06:54:26  30 of 32 START test unique_rsi_trade_date ...................................... [RUN]
+[2025-04-24T06:54:27.637+0000] {subprocess.py:93} INFO - [0m06:54:27  30 of 32 FAIL 180 unique_rsi_trade_date ........................................ [[31mFAIL 180[0m in 0.66s]
+[2025-04-24T06:54:27.641+0000] {subprocess.py:93} INFO - [0m06:54:27  31 of 32 START test unique_stock_indicators_trade_date ......................... [RUN]
+[2025-04-24T06:54:28.386+0000] {subprocess.py:93} INFO - [0m06:54:28  31 of 32 FAIL 180 unique_stock_indicators_trade_date ........................... [[31mFAIL 180[0m in 0.74s]
+[2025-04-24T06:54:28.390+0000] {subprocess.py:93} INFO - [0m06:54:28  32 of 32 START test unique_volume_summary_trade_date ........................... [RUN]
+[2025-04-24T06:54:29.112+0000] {subprocess.py:93} INFO - [0m06:54:29  32 of 32 FAIL 180 unique_volume_summary_trade_date ............................. [[31mFAIL 180[0m in 0.72s]
+[2025-04-24T06:54:29.120+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.121+0000] {subprocess.py:93} INFO - [0m06:54:29  Finished running 32 data tests in 0 hours 0 minutes and 21.28 seconds (21.28s).
+[2025-04-24T06:54:29.240+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.241+0000] {subprocess.py:93} INFO - [0m06:54:29  [31mCompleted with 12 errors and 0 warnings:[0m
+[2025-04-24T06:54:29.242+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.243+0000] {subprocess.py:93} INFO - [0m06:54:29    Database Error in test not_null_stock_indicators_rsi_14d (models/output/schema.yml)
+[2025-04-24T06:54:29.244+0000] {subprocess.py:93} INFO -   000904 (42000): SQL compilation error: error line 12 at position 7
+[2025-04-24T06:54:29.245+0000] {subprocess.py:93} INFO -   invalid identifier 'RSI_14D'
+[2025-04-24T06:54:29.245+0000] {subprocess.py:93} INFO -   compiled code at target/run/dbt_stock_project/models/output/schema.yml/not_null_stock_indicators_rsi_14d.sql
+[2025-04-24T06:54:29.246+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.246+0000] {subprocess.py:93} INFO - [0m06:54:29    Database Error in test not_null_volume_summary_total_volume (models/output/schema.yml)
+[2025-04-24T06:54:29.247+0000] {subprocess.py:93} INFO -   000904 (42000): SQL compilation error: error line 12 at position 7
+[2025-04-24T06:54:29.247+0000] {subprocess.py:93} INFO -   invalid identifier 'TOTAL_VOLUME'
+[2025-04-24T06:54:29.248+0000] {subprocess.py:93} INFO -   compiled code at target/run/dbt_stock_project/models/output/schema.yml/not_null_volume_summary_total_volume.sql
+[2025-04-24T06:54:29.249+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.250+0000] {subprocess.py:93} INFO - [0m06:54:29    Compilation Error in test positive_values_moving_averages_close_price_14d_ma (models/output/schema.yml)
+[2025-04-24T06:54:29.251+0000] {subprocess.py:93} INFO -   'test_positive_values' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[2025-04-24T06:54:29.252+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.253+0000] {subprocess.py:93} INFO - [0m06:54:29    Compilation Error in test positive_values_moving_averages_close_price_30d_ma (models/output/schema.yml)
+[2025-04-24T06:54:29.254+0000] {subprocess.py:93} INFO -   'test_positive_values' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[2025-04-24T06:54:29.256+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.257+0000] {subprocess.py:93} INFO - [0m06:54:29    Compilation Error in test positive_values_moving_averages_close_price_7d_ma (models/output/schema.yml)
+[2025-04-24T06:54:29.258+0000] {subprocess.py:93} INFO -   'test_positive_values' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[2025-04-24T06:54:29.259+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.259+0000] {subprocess.py:93} INFO - [0m06:54:29    Compilation Error in test positive_values_volume_summary_total_volume (models/output/schema.yml)
+[2025-04-24T06:54:29.260+0000] {subprocess.py:93} INFO -   'test_positive_values' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[2025-04-24T06:54:29.261+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.262+0000] {subprocess.py:93} INFO - [0m06:54:29    Compilation Error in test range_rsi_rsi_14d__100__0 (models/output/schema.yml)
+[2025-04-24T06:54:29.263+0000] {subprocess.py:93} INFO -   'test_range' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[2025-04-24T06:54:29.264+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.265+0000] {subprocess.py:93} INFO - [0m06:54:29    Compilation Error in test range_stock_indicators_rsi_14d__100__0 (models/output/schema.yml)
+[2025-04-24T06:54:29.266+0000] {subprocess.py:93} INFO -   'test_range' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[2025-04-24T06:54:29.266+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.267+0000] {subprocess.py:93} INFO - [0m06:54:29  [31mFailure in test unique_moving_averages_trade_date (models/output/schema.yml)[0m
+[2025-04-24T06:54:29.268+0000] {subprocess.py:93} INFO - [0m06:54:29    Got 180 results, configured to fail if != 0
+[2025-04-24T06:54:29.269+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.270+0000] {subprocess.py:93} INFO - [0m06:54:29    compiled code at target/compiled/dbt_stock_project/models/output/schema.yml/unique_moving_averages_trade_date.sql
+[2025-04-24T06:54:29.270+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.271+0000] {subprocess.py:93} INFO - [0m06:54:29  [31mFailure in test unique_rsi_trade_date (models/output/schema.yml)[0m
+[2025-04-24T06:54:29.272+0000] {subprocess.py:93} INFO - [0m06:54:29    Got 180 results, configured to fail if != 0
+[2025-04-24T06:54:29.273+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.274+0000] {subprocess.py:93} INFO - [0m06:54:29    compiled code at target/compiled/dbt_stock_project/models/output/schema.yml/unique_rsi_trade_date.sql
+[2025-04-24T06:54:29.275+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.276+0000] {subprocess.py:93} INFO - [0m06:54:29  [31mFailure in test unique_stock_indicators_trade_date (models/output/schema.yml)[0m
+[2025-04-24T06:54:29.277+0000] {subprocess.py:93} INFO - [0m06:54:29    Got 180 results, configured to fail if != 0
+[2025-04-24T06:54:29.278+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.278+0000] {subprocess.py:93} INFO - [0m06:54:29    compiled code at target/compiled/dbt_stock_project/models/output/schema.yml/unique_stock_indicators_trade_date.sql
+[2025-04-24T06:54:29.279+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.279+0000] {subprocess.py:93} INFO - [0m06:54:29  [31mFailure in test unique_volume_summary_trade_date (models/output/schema.yml)[0m
+[2025-04-24T06:54:29.280+0000] {subprocess.py:93} INFO - [0m06:54:29    Got 180 results, configured to fail if != 0
+[2025-04-24T06:54:29.280+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.281+0000] {subprocess.py:93} INFO - [0m06:54:29    compiled code at target/compiled/dbt_stock_project/models/output/schema.yml/unique_volume_summary_trade_date.sql
+[2025-04-24T06:54:29.281+0000] {subprocess.py:93} INFO - [0m06:54:29
+[2025-04-24T06:54:29.282+0000] {subprocess.py:93} INFO - [0m06:54:29  Done. PASS=20 WARN=0 ERROR=12 SKIP=0 TOTAL=32
+[2025-04-24T06:54:30.124+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-04-24T06:54:30.134+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-04-24T06:54:30.139+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=dbt_stock_project, task_id=dbt_test, run_id=manual__2025-04-24T06:53:47.151368+00:00, execution_date=20250424T065347, start_date=20250424T065403, end_date=20250424T065430
+[2025-04-24T06:54:30.154+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-24T06:54:30.155+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 354 for task dbt_test (Bash command failed. The command returned a non-zero exit code 1.; 662)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-04-24T06:54:30.174+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-04-24T06:54:30.193+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-24T06:54:30.198+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

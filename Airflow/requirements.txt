@@ -1,0 +1,4 @@
+yfinance==0.2.55
+dbt-snowflake==1.8.1
+apache-airflow-providers-snowflake==5.7.0
+

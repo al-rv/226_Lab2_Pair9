@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: stock
+    description: "Base stock data model with symbol and trade_date as composite key"
+    columns:
+      - name: symbol
+        tests: [not_null]
+      - name: trade_date
+        tests: [not_null]
+      - name: stock_id
+        tests: [unique, not_null]
+
+  - name: rsi
+    description: "14-day RSI values for each symbol"
+    columns:
+      - name: stock_id
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('stock')
+              field: stock_id
+      
+              
+
+  - name: moving_averages
+    description: "7-day, 14-day, and 30-day moving averages of closing prices"
+    columns:
+      - name: stock_id
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('stock')
+              field: stock_id
+
+  - name: weekly_volume
+    description: "7-day rolling sum of trade volume per stock symbol"
+    columns:
+      - name: stock_id
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('stock')
+              field: stock_id
+      
+      

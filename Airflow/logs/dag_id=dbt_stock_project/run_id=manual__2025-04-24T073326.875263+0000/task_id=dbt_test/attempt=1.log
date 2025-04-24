@@ -1,0 +1,126 @@
+[2025-04-24T07:33:43.882+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-24T07:33:43.900+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_stock_project.dbt_test manual__2025-04-24T07:33:26.875263+00:00 [queued]>
+[2025-04-24T07:33:43.909+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_stock_project.dbt_test manual__2025-04-24T07:33:26.875263+00:00 [queued]>
+[2025-04-24T07:33:43.911+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-04-24T07:33:43.925+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_test> on 2025-04-24 07:33:26.875263+00:00
+[2025-04-24T07:33:43.933+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_stock_project', 'dbt_test', 'manual__2025-04-24T07:33:26.875263+00:00', '--job-id', '360', '--raw', '--subdir', 'DAGS_FOLDER/226_lab2_elt.py', '--cfg-path', '/tmp/tmpcshh_89w']
+[2025-04-24T07:33:43.936+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2508) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-04-24T07:33:43.936+0000] {standard_task_runner.py:105} INFO - Job 360: Subtask dbt_test
+[2025-04-24T07:33:43.937+0000] {standard_task_runner.py:72} INFO - Started process 2509 to run task
+[2025-04-24T07:33:43.985+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_stock_project.dbt_test manual__2025-04-24T07:33:26.875263+00:00 [running]> on host e8b5346887eb
+[2025-04-24T07:33:44.068+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_stock_project' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2025-04-24T07:33:26.875263+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-24T07:33:26.875263+00:00'
+[2025-04-24T07:33:44.070+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-24T07:33:44.084+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-04-24T07:33:44.086+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt test --profiles-dir /home/***/.dbt --project-dir /opt/***/dbt']
+[2025-04-24T07:33:44.096+0000] {subprocess.py:86} INFO - Output:
+[2025-04-24T07:33:46.087+0000] {subprocess.py:93} INFO - [0m07:33:46  Running with dbt=1.8.7
+[2025-04-24T07:33:46.986+0000] {subprocess.py:93} INFO - [0m07:33:46  Registered adapter: snowflake=1.8.1
+[2025-04-24T07:33:47.789+0000] {subprocess.py:93} INFO - [0m07:33:47  Found 7 models, 11 data tests, 3 sources, 459 macros
+[2025-04-24T07:33:47.793+0000] {subprocess.py:93} INFO - [0m07:33:47
+[2025-04-24T07:33:48.727+0000] {subprocess.py:93} INFO - [0m07:33:48  Concurrency: 1 threads (target='dev')
+[2025-04-24T07:33:48.729+0000] {subprocess.py:93} INFO - [0m07:33:48
+[2025-04-24T07:33:48.743+0000] {subprocess.py:93} INFO - [0m07:33:48  1 of 11 START test accepted_values_rsi_rsi_14d__0__100 ......................... [RUN]
+[2025-04-24T07:33:49.717+0000] {subprocess.py:93} INFO - [0m07:33:49  1 of 11 FAIL 509 accepted_values_rsi_rsi_14d__0__100 ........................... [[31mFAIL 509[0m in 0.97s]
+[2025-04-24T07:33:49.721+0000] {subprocess.py:93} INFO - [0m07:33:49  2 of 11 START test not_null_moving_averages_stock_id ........................... [RUN]
+[2025-04-24T07:33:50.482+0000] {subprocess.py:93} INFO - [0m07:33:50  2 of 11 PASS not_null_moving_averages_stock_id ................................. [[32mPASS[0m in 0.76s]
+[2025-04-24T07:33:50.486+0000] {subprocess.py:93} INFO - [0m07:33:50  3 of 11 START test not_null_rsi_stock_id ....................................... [RUN]
+[2025-04-24T07:33:51.403+0000] {subprocess.py:93} INFO - [0m07:33:51  3 of 11 PASS not_null_rsi_stock_id ............................................. [[32mPASS[0m in 0.91s]
+[2025-04-24T07:33:51.407+0000] {subprocess.py:93} INFO - [0m07:33:51  4 of 11 START test not_null_stock_stock_id ..................................... [RUN]
+[2025-04-24T07:33:52.151+0000] {subprocess.py:93} INFO - [0m07:33:52  4 of 11 PASS not_null_stock_stock_id ........................................... [[32mPASS[0m in 0.74s]
+[2025-04-24T07:33:52.155+0000] {subprocess.py:93} INFO - [0m07:33:52  5 of 11 START test not_null_stock_symbol ....................................... [RUN]
+[2025-04-24T07:33:52.835+0000] {subprocess.py:93} INFO - [0m07:33:52  5 of 11 PASS not_null_stock_symbol ............................................. [[32mPASS[0m in 0.68s]
+[2025-04-24T07:33:52.841+0000] {subprocess.py:93} INFO - [0m07:33:52  6 of 11 START test not_null_stock_trade_date ................................... [RUN]
+[2025-04-24T07:33:53.631+0000] {subprocess.py:93} INFO - [0m07:33:53  6 of 11 PASS not_null_stock_trade_date ......................................... [[32mPASS[0m in 0.79s]
+[2025-04-24T07:33:53.635+0000] {subprocess.py:93} INFO - [0m07:33:53  7 of 11 START test relationships_moving_averages_stock_id__stock_id__ref_stock_  [RUN]
+[2025-04-24T07:33:54.465+0000] {subprocess.py:93} INFO - [0m07:33:54  7 of 11 PASS relationships_moving_averages_stock_id__stock_id__ref_stock_ ...... [[32mPASS[0m in 0.83s]
+[2025-04-24T07:33:54.469+0000] {subprocess.py:93} INFO - [0m07:33:54  8 of 11 START test relationships_rsi_stock_id__stock_id__ref_stock_ ............ [RUN]
+[2025-04-24T07:33:55.315+0000] {subprocess.py:93} INFO - [0m07:33:55  8 of 11 PASS relationships_rsi_stock_id__stock_id__ref_stock_ .................. [[32mPASS[0m in 0.84s]
+[2025-04-24T07:33:55.319+0000] {subprocess.py:93} INFO - [0m07:33:55  9 of 11 START test unique_moving_averages_stock_id ............................. [RUN]
+[2025-04-24T07:33:55.998+0000] {subprocess.py:93} INFO - [0m07:33:55  9 of 11 PASS unique_moving_averages_stock_id ................................... [[32mPASS[0m in 0.68s]
+[2025-04-24T07:33:56.001+0000] {subprocess.py:93} INFO - [0m07:33:56  10 of 11 START test unique_rsi_stock_id ........................................ [RUN]
+[2025-04-24T07:33:56.624+0000] {subprocess.py:93} INFO - [0m07:33:56  10 of 11 PASS unique_rsi_stock_id .............................................. [[32mPASS[0m in 0.62s]
+[2025-04-24T07:33:56.627+0000] {subprocess.py:93} INFO - [0m07:33:56  11 of 11 START test unique_stock_stock_id ...................................... [RUN]
+[2025-04-24T07:33:57.238+0000] {subprocess.py:93} INFO - [0m07:33:57  11 of 11 PASS unique_stock_stock_id ............................................ [[32mPASS[0m in 0.61s]
+[2025-04-24T07:33:57.244+0000] {subprocess.py:93} INFO - [0m07:33:57
+[2025-04-24T07:33:57.245+0000] {subprocess.py:93} INFO - [0m07:33:57  Finished running 11 data tests in 0 hours 0 minutes and 9.45 seconds (9.45s).
+[2025-04-24T07:33:57.356+0000] {subprocess.py:93} INFO - [0m07:33:57
+[2025-04-24T07:33:57.357+0000] {subprocess.py:93} INFO - [0m07:33:57  [31mCompleted with 1 error and 0 warnings:[0m
+[2025-04-24T07:33:57.358+0000] {subprocess.py:93} INFO - [0m07:33:57
+[2025-04-24T07:33:57.359+0000] {subprocess.py:93} INFO - [0m07:33:57  [31mFailure in test accepted_values_rsi_rsi_14d__0__100 (models/output/schema.yml)[0m
+[2025-04-24T07:33:57.360+0000] {subprocess.py:93} INFO - [0m07:33:57    Got 509 results, configured to fail if != 0
+[2025-04-24T07:33:57.361+0000] {subprocess.py:93} INFO - [0m07:33:57
+[2025-04-24T07:33:57.362+0000] {subprocess.py:93} INFO - [0m07:33:57    compiled code at target/compiled/dbt_stock_project/models/output/schema.yml/accepted_values_rsi_rsi_14d__0__100.sql
+[2025-04-24T07:33:57.364+0000] {subprocess.py:93} INFO - [0m07:33:57
+[2025-04-24T07:33:57.365+0000] {subprocess.py:93} INFO - [0m07:33:57  Done. PASS=10 WARN=0 ERROR=1 SKIP=0 TOTAL=11
+[2025-04-24T07:33:58.452+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-04-24T07:33:58.464+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-04-24T07:33:58.468+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=dbt_stock_project, task_id=dbt_test, run_id=manual__2025-04-24T07:33:26.875263+00:00, execution_date=20250424T073326, start_date=20250424T073343, end_date=20250424T073358
+[2025-04-24T07:33:58.485+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-24T07:33:58.487+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 360 for task dbt_test (Bash command failed. The command returned a non-zero exit code 1.; 2509)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-04-24T07:33:58.531+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-04-24T07:33:58.554+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-24T07:33:58.561+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

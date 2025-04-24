@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: raw
+    database: USER_DB_BLUEJAY
+    schema: raw
+    description: "Schema which stores raw tables (ETL)"
+    tables:
+      - name: stock
+        identifier: STOCK
+        description: "Raw historical stock price data"
+      - name: stock_forecast
+        identifier: STOCK_FORECAST
+        description: "Forecasted stock prices"
+      - name: final_data
+        identifier: FINAL_DATA
+        description: "Combined actual and forecasted prices"
